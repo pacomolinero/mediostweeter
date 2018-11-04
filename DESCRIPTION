@@ -5,6 +5,6 @@ Version: 0.1.1
 Author: Francisco Molinero
 Maintainer: Francisco Molinero <paco@byasl.com>
 Description: Estadísticas sobre medios de comunicación españoles en Tweeter.
-License: CC
+License: CC BY-NC 
 Encoding: UTF-8
 LazyData: true
