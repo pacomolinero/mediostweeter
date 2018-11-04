@@ -1,3 +1,4 @@
+//cargamos la libreria
 library(twitteR)
 
 //Data for tweeter developer conection
@@ -6,11 +7,15 @@ consumer_secret <- ""
 access_token <- ""
 access_secret <- ""
 
+//accedemos al API
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
+//Recogemos los datos de los medio que queremos analizar
+//Generamos un dataframe para pode generar un csv
 tw = twitteR::lookupUsers(c('elmundoes','ctxt_es','elespanolcom','abc_es','20m','larazon_es','LaVanguardia','eldiarioes','publico_es','elconfidencial','elperiodico','lavozdegalicia','_infolibre','lanuevaespana','heraldoes','ElSaltoDiario','nortecastilla','diariovasco','ElBaulDeKubrick','el_pais','okdiario','El_Plural','lamarea_com','voz_populi','periodistdigit','nuevatribuna','prnoticias'))
 de = twitteR::twListToDF(tw)
 
+//Recogemos los últimos 100 twits de todos los medio
 a <- userTimeline("ctxt_es", n=100)
 b <- userTimeline("elmundoes", n=100)
 c <- userTimeline("elespanolcom", n=100)
@@ -38,6 +43,7 @@ y <- userTimeline("voz_populi", n=100)
 z <- userTimeline("nuevatribuna", n=100)
 aa <- userTimeline("prnoticias", n=100)
 
+//Contamos los retweets
 sa = sum(sapply(a,"[[",".->retweetCount"))
 sb = sum(sapply(b,"[[",".->retweetCount"))
 sc = sum(sapply(c,"[[",".->retweetCount"))
@@ -65,7 +71,9 @@ sy = sum(sapply(y,"[[",".->retweetCount"))
 sz = sum(sapply(z,"[[",".->retweetCount"))
 saa = sum(sapply(aa,"[[",".->retweetCount"))
 
+//Generamos un data.frame para poder crear el correspondiente csv
 retwits = data.frame(sa, sb, sc, sd, se, sf, sg, sh, si, sj, sk, sl, sm, sn, so, sp, sq, sr, ss ,st, su, sv, sx, sy, sz, saa)
 
+//Generamos los csv que usaremos en nuestra aplicación
 write.csv(retwits, 'rt.csv')
 write.csv(de, 'datosd.csv')
