@@ -1,9 +1,9 @@
 library(twitteR)
 
-consumer_key <- "TzXksEGQa7ACvJ13ChlJXQ"
-consumer_secret <- "aDAQ4p7OMKzj2Z46kE1kDBPKV6l5eGwS3vBn7f9yqqs"
-access_token <- "29687709-dpvkBChONQsXaQotrAqWT9rcu62rkWhYsQVAnWOIh"
-access_secret <- "Qo1Z5I2ULfYct0jtamxJch8ho33TXxdJwO1PBgWAoNI"
+consumer_key <- "sEGQa7ACvJ13ChlJXQ"
+consumer_secret <- "4p7OMKzj2Z46kE1kDBPKV6l5eGwS3vBn7f9yqqs"
+access_token <- "dpvkBChONQsXaQotrAqWT9rcu62rkWhYsQVAnWOIh"
+access_secret <- "5I2ULfYct0jtamxJch8ho33TXxdJwO1PBgWAoNI"
 
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
