@@ -1,5 +1,6 @@
 library(twitteR)
 
+//Data for tweeter developer conection
 consumer_key <- ""
 consumer_secret <- ""
 access_token <- ""
